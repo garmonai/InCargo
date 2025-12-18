@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InCargo — каталог авто</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-logo">IC</div>
+        <div class="brand-text">
+          <div class="brand-name">InCargo</div>
+          <div class="brand-sub">Каталог авто под заказ</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" id="openCallback" title="Перезвоните мне">☎</button>
+        <button class="icon-btn" id="openMenu" title="Меню">☰</button>
+      </div>
+    </header>
+
+    <main class="scroll-area" id="scrollArea">
+      <section class="hero" id="hero">
+        <div class="hero-badge-row">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span>Актуальные предложения под заказ</span>
+          </div>
+          <div class="hero-rating">Каталог InCargo</div>
+        </div>
+
+        <h1 class="hero-title">
+          Каталог <span>InCargo</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Примеры популярных авто, которые мы регулярно привозим клиентам. По запросу
+          подберём аналоги под ваш бюджет и страну.
+        </p>
+      </section>
+
+      <section>
+        <div class="section-title-row">
+          <div>
+            <div class="section-title">Каталог авто</div>
+            <div class="section-sub">Поиск по марке, модели и типу</div>
+          </div>
+        </div>
+
+        <div class="search-row">
+          <div class="search-input-wrap">
+            <span class="search-icon">🔍</span>
+            <input
+              type="text"
+              id="searchInput"
+              class="search-input"
+              placeholder="Марка, модель, год..."
+            />
+            <span class="search-clear" id="searchClear">×</span>
+          </div>
+          <button class="filter-btn" id="filtersBtn" title="Фильтры">⚙</button>
+        </div>
+
+        <div class="chips-row" id="chipsRow">
+          <button class="chip chip-active" data-filter="all">Все авто</button>
+          <button class="chip" data-filter="europe">Европа</button>
+          <button class="chip" data-filter="korea">Корея</button>
+          <button class="chip" data-filter="usa">США</button>
+          <button class="chip" data-filter="uae">ОАЭ</button>
+          <button class="chip" data-filter="suv">Кроссоверы</button>
+          <button class="chip" data-filter="sedan">Седаны</button>
+        </div>
+      </section>
+
+      <section class="cars-grid" id="carsGrid">
+        <article
+          class="car-card"
+          data-tags="hyundai sonata корея седан"
+          data-segment="korea sedan"
+        >
+          <div
+            class="car-photo"
+            style="background-image: url('car-korea-1.jpg');"
+          >
+            <div class="car-badge">105 000 км · 2021</div>
+          </div>
+          <div class="car-info">
+            <div class="car-title-row">
+              <h2 class="car-title">Hyundai Sonata 2.0</h2>
+              <div class="car-price">от 18 900 $</div>
+            </div>
+            <div class="car-meta-row">
+              <div class="meta-pill">Бензин · 2.0 · 150 л.с.</div>
+              <div class="meta-pill">Автомат</div>
+              <div class="meta-pill">Без ДТП по базе</div>
+            </div>
+            <div class="car-tags-row">
+              <span>⏱ Срок поставки: 28–35 дней</span>
+              <span>Аукцион KIA/Hyundai</span>
+            </div>
+            <div class="car-cta">
+              <button class="btn-outline" data-car="Hyundai Sonata 2.0">Подробнее</button>
+              <button class="btn-solid" data-car="Hyundai Sonata 2.0">
+                Рассчитать с доставкой
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="car-card"
+          data-tags="bmw 3 europe европа седан"
+          data-segment="europe sedan"
+        >
+          <div
+            class="car-photo"
+            style="background-image: url('car-europe-1.jpg');"
+          >
+            <div class="car-badge">72 000 км · 2019</div>
+          </div>
+          <div class="car-info">
+            <div class="car-title-row">
+              <h2 class="car-title">BMW 320d xDrive</h2>
+              <div class="car-price">от 24 500 €</div>
+            </div>
+            <div class="car-meta-row">
+              <div class="meta-pill">Дизель · 2.0 · 190 л.с.</div>
+              <div class="meta-pill">Полный привод</div>
+              <div class="meta-pill">Сервисная история</div>
+            </div>
+            <div class="car-tags-row">
+              <span>⏱ 30–40 дней с растаможкой</span>
+              <span>Выкуп у дилера</span>
+            </div>
+            <div class="car-cta">
+              <button class="btn-outline" data-car="BMW 320d xDrive">Подробнее</button>
+              <button class="btn-solid" data-car="BMW 320d xDrive">
+                Получить подбор 3 вариантов
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="car-card"
+          data-tags="tesla model 3 usa электромобиль"
+          data-segment="usa sedan"
+        >
+          <div
+            class="car-photo"
+            style="background-image: url('car-usa-1.jpg');"
+          >
+            <div class="car-badge">Без пробега по РФ</div>
+          </div>
+          <div class="car-info">
+            <div class="car-title-row">
+              <h2 class="car-title">Tesla Model 3 Long Range</h2>
+              <div class="car-price">от 32 800 $</div>
+            </div>
+            <div class="car-meta-row">
+              <div class="meta-pill">Электро · 75 кВт·ч</div>
+              <div class="meta-pill">Запас хода ~480 км</div>
+              <div class="meta-pill">Под ключ в РФ</div>
+            </div>
+            <div class="car-tags-row">
+              <span>⏱ 35–50 дней с портом</span>
+              <span>Страховой аукцион</span>
+            </div>
+            <div class="car-cta">
+              <button class="btn-outline" data-car="Tesla Model 3">Подробнее</button>
+              <button class="btn-solid" data-car="Tesla Model 3">
+                Узнать итоговый бюджет
+              </button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- Нижняя навигация (между страницами) -->
+    <nav class="bottom-nav">
+      <div class="nav-item" data-href="index.html#hero">
+        <div class="nav-pill">🏠</div>
+        Домой
+      </div>
+      <div class="nav-item active" data-href="catalog.html">
+        <div class="nav-pill">🚗</div>
+        Каталог
+      </div>
+      <div class="nav-item" data-href="steps.html">
+        <div class="nav-pill">📦</div>
+        Этапы
+      </div>
+      <div class="nav-item" data-href="request.html">
+        <div class="nav-pill">✉</div>
+        Заявка
+      </div>
+    </nav>
+  </div>
+
+  <button class="scroll-top-btn" id="scrollToTopBtn">↑</button>
+
+  <!-- Модальное окно с подробным описанием авто -->
+  <div class="modal-overlay" id="carDetailsModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title" id="carDetailsTitle"></div>
+        <button class="modal-close" id="carDetailsClose">×</button>
+      </div>
+      <div class="modal-body" id="carDetailsBody">
+        <!-- Описание подставляется скриптом -->
+      </div>
+      <div class="modal-footer">
+        <button id="carDetailsOk">Понятно</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Лоадер перехода между страницами -->
+  <div class="page-loader-overlay" id="pageLoader">
+    <div class="page-loader"></div>
+  </div>
+
+  <!-- Боковое меню -->
+  <div class="side-menu-overlay" id="sideMenu">
+    <div class="side-menu">
+      <div class="side-menu-header">
+        <div class="side-menu-title">Меню InCargo</div>
+        <button class="side-menu-close" id="sideMenuClose">×</button>
+      </div>
+      <div class="side-menu-links">
+        <div class="side-menu-link" data-href="index.html#hero">
+          <div>Главная</div>
+          <span>О сервисе и преимущества</span>
+        </div>
+        <div class="side-menu-link" data-href="catalog.html">
+          <div>Каталог</div>
+          <span>Примеры авто под заказ</span>
+        </div>
+        <div class="side-menu-link" data-href="steps.html">
+          <div>Этапы работы</div>
+          <span>Как мы привозим авто</span>
+        </div>
+        <div class="side-menu-link" data-href="request.html#request">
+          <div>Оставить заявку</div>
+          <span>Рассчитать авто под бюджет</span>
+        </div>
+      </div>
+      <div class="side-menu-contact">
+        <strong>Связаться с нами</strong>
+        <div>Телефон: <a href="tel:+79685989322">+7 968 598 93 22</a></div>
+        <div>WhatsApp / Telegram: <span>@incargo_support</span></div>
+        <div>E-mail: <a href="mailto:info@incargo.ru">info@incargo.ru</a></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
+
+
